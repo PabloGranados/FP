@@ -1,6 +1,162 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int llfor(int array[2][2][2][2][2]){
+    int j, k, l, m, n;
+    int valordimen5;
+    for(j=0; j<2; j++){
+        for (k=0; k<2; k++){
+            for (l=0; l<2; l++){
+                for (m=0; m<2; m++){
+                    for (n=0; n<2; n++){
+                        printf("Introduzca el valor: ");
+                        printf("\n[ %d ][ %d ][ %d ][ %d ][ %d ] = ", j,k,l,m,n);
+                        scanf("%d", &valordimen5);
+                        array[j][k][l][m][n] = valordimen5;
+                    }
+                }
+            }
+        }
+    }
+    return array[j][k][l][m][n];
+}
+
+int mfor(int array[2][2][2][2][2]){
+    int j, k, l, m, n;
+    printf("Arreglo: ");
+        for(j=0; j<2; j++){
+            for (k=0; k<2; k++){
+                for (l=0; l<2; l++){
+                    for (m=0; m<2; m++){
+                        printf("\n");
+                        for (n=0; n<2; n++){
+                            printf("[ %d ][ %d ][ %d ][ %d ][ %d ] = %d", j,k,l,m,n, array[j][k][l][m][n]);
+                            printf("\n");
+                        }
+                    }
+                }
+            }
+        }
+}
+
+int llwhi(int array[2][2][2][2][2]){
+    int j, k, l, m, n;
+    int valordimen5;
+    while(j<2){
+        while(k<2){
+            while(l<2){
+                while(m<2){
+                    printf("\n");
+                    while(n<2){
+                        printf("Introduzca el valor: ");
+                        printf("\n[ %d ][ %d ][ %d ][ %d ][ %d ] = ", j,k,l,m,n);
+                        scanf("%d", &valordimen5);
+                        array[j][k][l][m][n] = valordimen5;
+                        n++;
+                    } 
+                    n=0;
+                    m++;
+                }  
+                m=0;
+                l++;
+            }
+            l=0;
+            k++;
+        }
+        k=0;
+        j++;
+    }
+    j=0;
+    return array[j][k][l][m][n];
+}
+
+int mwhi(int array[2][2][2][2][2]){
+    int j, k, l, m, n;
+    printf("Arreglo: ");
+        while(j<2){
+            while(k<2){
+                while(l<2){
+                    while(m<2){
+                        printf("\n");
+                        while(n<2){
+                            printf("[ %d ][ %d ][ %d ][ %d ][ %d ] = %d", j,k,l,m,n, array[j][k][l][m][n]);
+                            printf("\n");
+                            n++;
+                        }
+                        n=0;
+                        m++;
+                    }
+                    m=0;
+                    l++;
+                }
+                l=0;
+                k++;
+            }
+            k=0;
+            j++;
+        }
+        j=0;
+}
+
+int lldowhi(int array[2][2][2][2][2]){
+    int j, k, l, m, n;
+    int valordimen5;
+    do{
+        do{
+            do{
+                do{
+                    printf("\n");
+                    do{
+                        printf("Introduzca el valor: ");
+                        printf("\n[ %d ][ %d ][ %d ][ %d ][ %d ] = ", j,k,l,m,n);
+                        scanf("%d", &valordimen5);
+                        array[j][k][l][m][n] = valordimen5;
+                        n++;
+                    } while(n<2);
+                    n=0;
+                    m++;
+                } while(m<2); 
+                m=0;
+                l++;
+            } while(l<2);
+            l=0;
+            k++;
+        }while(k<2);
+        k=0;
+        j++;
+    }while(j<2);
+    j=0;
+    return array [j][k][l][m][n];
+}
+
+int mdowhi(int array[2][2][2][2][2]){
+    int j, k, l, m, n;
+    printf("Arreglo: ");
+    do{
+        do{
+            do{
+                do{
+                    printf("\n");
+                    do{
+                        printf("[ %d ][ %d ][ %d ][ %d ][ %d ] = %d", j,k,l,m,n, array[j][k][l][m][n]);
+                        printf("\n");    
+                        n++;
+                    }while(n<2);
+                    n=0;                   
+                    m++;
+                }while(m<2);
+                m=0;
+                l++;
+            }while(l<2);
+            l=0;
+            k++;
+        }while(k<2);
+        k=0;
+        j++;
+    }while(j<2);
+    j=0;
+}
+
 int main(){
     
     int menu, mll;
@@ -29,36 +185,10 @@ int main(){
                     printf("\n3. Salir del programa");
                     scanf("%d", &mll);
                     if(mll == 1){
-                        for(j=0; j<2; j++){
-                            for (k=0; k<2; k++){
-                                for (l=0; l<2; l++){
-                                    for (m=0; m<2; m++){
-                                        for (n=0; n<2; n++){
-                                            printf("Introduzca el valor: ");
-                                            printf("\n[ %d ][ %d ][ %d ][ %d ][ %d ] = ", j,k,l,m,n);
-                                            scanf("%d", &valordimen5);
-                                            array[j][k][l][m][n] = valordimen5;
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        llfor(array);
                     }
                     else if(mll == 2){
-                        printf("Arreglo: ");
-                        for(j=0; j<2; j++){
-                            for (k=0; k<2; k++){
-                                for (l=0; l<2; l++){
-                                    for (m=0; m<2; m++){
-                                        printf("\n");
-                                        for (n=0; n<2; n++){
-                                            printf("[ %d ][ %d ][ %d ][ %d ][ %d ] = %d", j,k,l,m,n, array[j][k][l][m][n]);
-                                            printf("\n");
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        mfor(array);
                     }
                     else if(mll == 3){
                         p=0;
@@ -77,57 +207,59 @@ int main(){
                     printf("\n3. Salir del programa");
                     scanf("\n %d", &mll);
                     if(mll == 1){
-                        while(j<2){
-                            while(k<2){
-                                while(l<2){
-                                    while(m<2){
-                                        printf("\n");
-                                        while(n<2){
-                                            printf("Introduzca el valor: ");
-                                            printf("\n[ %d ][ %d ][ %d ][ %d ][ %d ] = ", j,k,l,m,n);
-                                            scanf("%d", &valordimen5);
-                                            array[j][k][l][m][n] = valordimen5;
-                                            n++;
-                                        } 
-                                        n=0;
-                                        m++;
-                                    }  
-                                    m=0;
-                                    l++;
-                                }
-                                l=0;
-                                k++;
-                            }
-                            k=0;
-                            j++;
-                        }
-                        j=0;
+                        llwhi(array);
+                        //while(j<2){
+                            //while(k<2){
+                                //while(l<2){
+                                    //while(m<2){
+                                        //printf("\n");
+                                        //while(n<2){
+                                            //printf("Introduzca el valor: ");
+                                            //printf("\n[ %d ][ %d ][ %d ][ %d ][ %d ] = ", j,k,l,m,n);
+                                            //scanf("%d", &valordimen5);
+                                            //array[j][k][l][m][n] = valordimen5;
+                                            //n++;
+                                        //} 
+                                        //n=0;
+                                        //m++;
+                                    //}  
+                                    //m=0;
+                                    //l++;
+                                //}
+                                //l=0;
+                                //k++;
+                            //}
+                            //k=0;
+                            //j++;
+                        //}
+                        //j=0;
                     }
                     else if(mll == 2){
-                        printf("Arreglo: ");
-                        while(j<2){
-                            while(k<2){
-                                while(l<2){
-                                    while(m<2){
-                                        printf("\n");
-                                        while(n<2){
-                                            printf("[ %d ][ %d ][ %d ][ %d ][ %d ] = %d", j,k,l,m,n, array[j][k][l][m][n]);
-                                            printf("\n");
-                                            n++;
-                                        }
-                                        n=0;
-                                        m++;
-                                    }
-                                    m=0;
-                                    l++;
-                                }
-                                l=0;
-                                k++;
-                            }
-                            k=0;
-                            j++;
-                        }
-                        j=0;
+                        mwhi(array);
+                        //printf("Arreglo: ");
+                        //while(j<2){
+                            //while(k<2){
+                                //while(l<2){
+                                    //while(m<2){
+                                        //printf("\n");
+                                        //while(n<2){
+                                            //printf("[ %d ][ %d ][ %d ][ %d ][ %d ] = %d", j,k,l,m,n, array[j][k][l][m][n]);
+                                            //printf("\n");
+                                            //n++;
+                                        //}
+                                        //n=0;
+                                        //m++;
+                                    //}
+                                    //m=0;
+                                    //l++;
+                                //}
+                                //l=0;
+                                //k++;
+                            //}
+                            //k=0;
+                            //j++;
+                        //}
+                        //j=0;
                     }
                     else if(mll == 3){
                         q=0;
@@ -146,57 +278,59 @@ int main(){
                     printf("\n3. Salir del programa");
                     scanf("\n %d", &mll);
                     if(mll == 1){
-                        do{
-                            do{
-                                do{
-                                    do{
-                                        printf("\n");
-                                        do{
-                                            printf("Introduzca el valor: ");
-                                            printf("\n[ %d ][ %d ][ %d ][ %d ][ %d ] = ", j,k,l,m,n);
-                                            scanf("%d", &valordimen5);
-                                            array[j][k][l][m][n] = valordimen5;
-                                            n++;
-                                        } while(n<2);
-                                        n=0;
-                                        m++;
-                                    } while(m<2); 
-                                    m=0;
-                                    l++;
-                                } while(l<2);
-                                l=0;
-                                k++;
-                            }while(k<2);
-                            k=0;
-                            j++;
-                        }while(j<2);
-                        j=0;
+                        lldowhi(array);
+                        //do{
+                            //do{
+                                //do{
+                                    //do{
+                                        //printf("\n");
+                                        //do{
+                                            //printf("Introduzca el valor: ");
+                                            //printf("\n[ %d ][ %d ][ %d ][ %d ][ %d ] = ", j,k,l,m,n);
+                                            //scanf("%d", &valordimen5);
+                                            //array[j][k][l][m][n] = valordimen5;
+                                            //n++;
+                                        //} while(n<2);
+                                        //n=0;
+                                        //m++;
+                                    //} while(m<2); 
+                                    //m=0;
+                                    //l++;
+                                //} while(l<2);
+                                //l=0;
+                                //k++;
+                            //}while(k<2);
+                            //k=0;
+                            //j++;
+                        //}while(j<2);
+                        //j=0;
                     }
                     else if(mll == 2){
-                        printf("Arreglo: ");
-                        do{
-                            do{
-                                do{
-                                    do{
-                                        printf("\n");
-                                        do{
-                                            printf("[ %d ][ %d ][ %d ][ %d ][ %d ] = %d", j,k,l,m,n, array[j][k][l][m][n]);
-                                            printf("\n");
-                                            n++;
-                                        }while(n<2);
-                                        n=0;
-                                        m++;
-                                    }while(m<2);
-                                    m=0;
-                                    l++;
-                                }while(l<2);
-                                l=0;
-                                k++;
-                            }while(k<2);
-                            k=0;
-                            j++;
-                        }while(j<2);
-                        j=0;
+                        mdowhi(array);
+                        //printf("Arreglo: ");
+                        //do{
+                            //do{
+                                //do{
+                                    //do{
+                                        //printf("\n");
+                                        //do{
+                                            //printf("[ %d ][ %d ][ %d ][ %d ][ %d ] = %d", j,k,l,m,n, array[j][k][l][m][n]);
+                                            //printf("\n");
+                                            //n++;
+                                        //}while(n<2);
+                                       //n=0;
+                                        //m++;
+                                    //}while(m<2);
+                                    //m=0;
+                                    //l++;
+                                //}while(l<2);
+                                //l=0;
+                                //k++;
+                            //}while(k<2);
+                            //k=0;
+                            //j++;
+                        //}while(j<2);
+                        //j=0;
                     }
                     else if(mll == 3){
                         r=0;
